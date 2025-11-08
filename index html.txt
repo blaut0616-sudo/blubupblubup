@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For you, my binaa 💌</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ffe6f0, #fff8e1, #e0f7fa);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  .envelope {
+    position: relative;
+    width: 200px;
+    height: 130px;
+    background: #ffb6c1;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.6s;
+  }
+  .envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 65px solid #ff80ab;
+    border-radius: 10px;
+  }
+  .letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300px;
+    max-width: 90vw;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: all 1s ease;
+    text-align: center;
+  }
+  .show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  h2 {
+    color: #ff80ab;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #444;
+    font-size: 0.95em;
+    line-height: 1.6em;
+    white-space: pre-line;
+  }
+  .heart {
+    font-size: 2em;
+    margin-top: 15px;
+    animation: beat 1s infinite alternate;
+  }
+  @keyframes beat {
+    to { transform: scale(1.2); }
+  }
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="about-you-the1975.mp3" type="audio/mpeg">
+</audio>
+
+<div class="envelope" onclick="openLetter()"></div>
+
+<div class="letter" id="letter">
+  <h2>For you, my binaa 💌</h2>
+  <p>
+Sometimes I fall quiet, not because I’ve stopped caring, but because love has become something I hold silently, something that stays even when words don’t. If a thousand hearts loved you, I’d be among them. If only one remained, it would still be mine. And if someday none did, that must mean I’m no longer here. I don't love you less because I write you less, perhaps I love you more because I think of you quietly.
+
+Lately, it feels like something between us has grown distant, like warmth fading into a chill we never asked for. We used to fill every silence with laughter, tease each other endlessly, talk until the night forgot the clock. Now, it’s like the quiet has a sound of its own. I’m not blaming you, or myself. I just miss us. I miss the way we used to fit so effortlessly. The way love used to feel like home for two of us. But still, I want to keep rediscovering you, over and over, as if love has endless beginnings.
+
+You’re not just someone I see, you’re someone I feel. You stay, you linger, and you leave warmth that refuses to fade, at least for me.
+
+And even though things between us have grown colder, even when arguments seem to come more often than laughter, when I beg for a little attention while you’re not in your best mood, please know I never mean to make things harder for you, for us. I just care too much. Maybe the way we both love isn’t the same, but I hope one day, we’ll learn how to meet in the middle. I hope we can still understand each other, even when love feels quietly hard lately.
+
+I don’t think loving you could ever feel ordinary. You’re a story I’ll never finish reading, one I’ll always want to open again, no matter how many times I’ve seen the same page.
+
+I love u so deeply, sayang.
+  </p>
+  <div class="heart">❤️</div>
+</div>
+
+<script>
+  function openLetter() {
+    document.querySelector('.envelope').style.opacity = '0';
+    document.getElementById('letter').classList.add('show');
+  }
+</script>
+
+</body>
+</html>
